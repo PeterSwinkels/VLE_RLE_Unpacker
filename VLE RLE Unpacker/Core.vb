@@ -100,7 +100,6 @@ Public Module CoreModule
                CompressionType = Source.Data(Source.Position)
                Source.Position += 1
 
-               ''If Target.Data.Count > 0 Then Erase Target.Data
                ReDim Target.Data(0 To GetSubFileSize(Source) - 1)
 
                If Target.Data.Count > 0 Then
@@ -114,7 +113,6 @@ Public Module CoreModule
                   End Select
 
                   If Success AndAlso Pass < (PassCount - 1) Then
-                     ''Erase Source.Data
                      Source.Position = 0
                      ReDim Source.Data(0 To Target.Data.Length - 1)
                      If Source.Data.Count = 0 Then
